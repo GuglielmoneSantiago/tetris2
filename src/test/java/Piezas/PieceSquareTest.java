@@ -37,13 +37,40 @@ public class PieceSquareTest {
          assertEquals( 2, p.getValorMatriz(3,3));
      }
  
+     @Test
+     public void entrar_piezaDerecha(){
+        PieceSquare p= new PieceSquare();
+        Board b=new Board();
+        b.piezaActiva=p;
+        b.insertarPieza();
+        b.piezaActiva.completarParedDerecha();
+        b.actualizarBoard0();
+        b.piezaActiva.establecerPosicion(9,0); 
+        b.actualizarBoard1();
+        assertEquals(1,b.getValor(0,9));
+        assertEquals(1,b.getValor(0,8));
+        assertEquals(1,b.getValor(1,9));
+        assertEquals(1,b.getValor(1,8)); 
 
+    }
 
-
-
-
-
-
+        @Test
+    public void entrar_piezaIzquierda(){
+        PieceSquare p= new PieceSquare();
+        Board b=new Board();
+        b.piezaActiva=p;
+        b.insertarPieza();
+        b.piezaActiva.setLado(1);
+        b.piezaActiva.completarParedIzquierda();
+        b.actualizarBoard0();
+        b.piezaActiva.establecerPosicion(0, 0);
+        b.actualizarBoard1();
+        assertEquals(1,b.getValor(0,0));
+        assertEquals(1,b.getValor(0,1));
+        assertEquals(1,b.getValor(1,1));
+        assertEquals(1,b.getValor(1,0));
+   
+     }
 
 
 }

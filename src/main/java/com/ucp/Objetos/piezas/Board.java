@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class Board {
     public int matriz[][]=new int [20][10];
     public PieceBase piezaActiva;
+    public int contador=0;
     public Board(){
         cargarMatriz_0();
     }
@@ -37,7 +38,24 @@ public class Board {
             System.out.println();
         }
     }
-
+    public void actualizarBoard0(){
+        for(int y=0;y<20;y++){
+            for(int x=0;x<10;x++){
+                if(piezaActiva.posicion[y][x]==1){
+                    matriz[y][x]=0;
+                }
+            }
+        }
+    }
+    public void actualizarBoard1(){
+        for(int y=0;y<20;y++){
+            for(int x=0;x<10;x++){
+                if(piezaActiva.posicion[y][x]==1){
+                    matriz[y][x]=1;
+                }
+            }
+        }
+    }
     
     public boolean puedeBajar(){
         boolean opcion=true;
@@ -50,7 +68,7 @@ public class Board {
         }
         return opcion;
     }
-    public void borrarFilaLlena() {
+    public void borrarFilaLlena(){
         for (int fila = matriz.length - 1; fila >= 0; fila--) {
 
             boolean filaLlena = true;
@@ -73,6 +91,7 @@ public class Board {
                 // Establece la fila superior como una fila vacía
                 Arrays.fill(matriz[0], 0);
                 fila++; // Revisa la fila actual nuevamente, ya que ahora contiene las filas de arriba
+                contador++;
             }
         }
     }
@@ -208,60 +227,140 @@ public class Board {
 
     public void insertarPieza(){
         int numero = (int)(Math.random()*9);
+        int condPerder=0;
+        for(int x=0;x<10;x++){
+            for(int y=0;y<4;y++){
+                if(matriz[y][x]==1){
+                    condPerder=1;
+                }
+            }
+        }
+        if(condPerder!=1){
         switch(numero){
             case 0:
                 piezaActiva.establecerPosicion(numero,0);
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
                 piezaActiva.completarParedIzquierda();
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
             case 1:
                 piezaActiva.establecerPosicion(numero,0);
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
             case 2:
                 piezaActiva.establecerPosicion(numero,0);
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
             case 3:
                 piezaActiva.establecerPosicion(numero,0);
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
             case 4:
                 piezaActiva.establecerPosicion(numero,0);
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
             case 5:
                 piezaActiva.establecerPosicion(numero,0);
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
             case 6:
                 piezaActiva.establecerPosicion(numero,0);
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
             case 7:
                 piezaActiva.establecerPosicion(numero,0);
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
             case 8:
                 piezaActiva.establecerPosicion(numero,0);
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
             case 9:
                 piezaActiva.establecerPosicion(numero,0);
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
                 piezaActiva.completarParedDerecha();
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
         }
     }
-
+    }
 }
+
