@@ -7,6 +7,7 @@ import org.junit.Test;
 import com.ucp.Objetos.piezas.Board;
 
 import com.ucp.Objetos.piezas.PieceLLeft;
+import com.ucp.Objetos.piezas.PieceSquare;
 
 public class PieceLLeftTest {
      @Test
@@ -85,19 +86,22 @@ public class PieceLLeftTest {
 
         @Test
     public void entrar_piezaIzquierda(){
-        PieceLLeft p= new PieceLLeft();
+        PieceSquare p= new PieceSquare();
         Board b=new Board();
         p.setLado(0);
         p.lados();
         b.piezaActiva=p;
-        
-        b.piezaActiva.completarParedDerecha();
-        b.piezaActiva.establecerPosicion(0,0);
-        b.posicion1(); 
-        assertEquals(1,b.getValor(0,2));
-        assertEquals(1,b.getValor(1,2));
-        assertEquals(1,b.getValor(1,1));
-        assertEquals(1,b.getValor(1,0)); 
+        b.insertarPieza();
+        b.piezaActiva.setLado(1);
+        b.piezaActiva.completarParedIzquierda();
+        b.actualizarBoard0();
+        b.piezaActiva.establecerPosicion(0, 0);
+        b.actualizarBoard1();
+        assertEquals(1,b.getValor(0,1));   
+        assertEquals(1,b.getValor(0,1));  
+        assertEquals(1,b.getValor(1,2));  
+        assertEquals(1,b.getValor(1,0));
+    
           
     }
 
