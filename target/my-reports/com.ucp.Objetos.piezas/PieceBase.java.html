@@ -17,79 +17,63 @@ public abstract class PieceBase implements iRotator{
 <span class="fc" id="L17">        lado=x;</span>
 <span class="fc" id="L18">    }</span>
     
-    public void printBoard() {
-<span class="nc bnc" id="L21" title="All 2 branches missed.">        for (int i = 0; i &lt; 20; i++) {</span>
-<span class="nc bnc" id="L22" title="All 2 branches missed.">            for (int j = 0; j &lt; 10; j++) {</span>
-                // Verificar si hay una pieza en la posición (i, j)
-<span class="nc bnc" id="L24" title="All 2 branches missed.">                if (posicion[i][j] != 5) {</span>
-                    // Si hay una pieza, imprimir un carácter que represente la pieza
-<span class="nc" id="L26">                    System.out.print(&quot;1&quot;); // Puedes usar otro carácter según tus preferencias</span>
-                } else {
-                    // Si no hay una pieza, imprimir un espacio en blanco
-<span class="nc" id="L29">                    System.out.print(&quot;0&quot;);</span>
-                }
-            }
-            // Salto de línea al final de cada fila del tablero
-<span class="nc" id="L33">            System.out.println();</span>
-        }
-<span class="nc" id="L35">    }</span>
     public int getValorPosicion(int posy,int posx){
-<span class="fc" id="L37">        return posicion[posy][posx];</span>
+<span class="fc" id="L21">        return posicion[posy][posx];</span>
     }
     protected void setValor1Posicion(int posy,int posx){
-<span class="fc" id="L40">        posicion[posy][posx]=1;</span>
-<span class="fc" id="L41">    }</span>
+<span class="fc" id="L24">        posicion[posy][posx]=1;</span>
+<span class="fc" id="L25">    }</span>
     protected void setValor1Matriz(int posy,int posx){
-<span class="fc" id="L43">        matriz[posy][posx]=1;</span>
-<span class="fc" id="L44">    }</span>
+<span class="fc" id="L27">        matriz[posy][posx]=1;</span>
+<span class="fc" id="L28">    }</span>
     protected void setValor2Matriz(int posy,int posx){
-<span class="fc" id="L46">        matriz[posy][posx]=2;</span>
-<span class="fc" id="L47">    }</span>
+<span class="fc" id="L30">        matriz[posy][posx]=2;</span>
+<span class="fc" id="L31">    }</span>
     public void reset(){
-<span class="fc bfc" id="L49" title="All 2 branches covered.">        for (int y=0; y&lt;4;y++){</span>
-<span class="fc bfc" id="L50" title="All 2 branches covered.">            for (int x=0;x&lt;4;x++){</span>
-<span class="fc" id="L51">                matriz[y][x]=0;</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        for (int y=0; y&lt;4;y++){</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">            for (int x=0;x&lt;4;x++){</span>
+<span class="fc" id="L35">                matriz[y][x]=0;</span>
             }
         }
-<span class="fc" id="L54">    }</span>
+<span class="fc" id="L38">    }</span>
     public void resetPosicion(){
-<span class="fc bfc" id="L56" title="All 2 branches covered.">        for (int y=0; y&lt;20;y++){</span>
-<span class="fc bfc" id="L57" title="All 2 branches covered.">            for (int x=0;x&lt;10;x++){</span>
-<span class="fc" id="L58">                posicion[y][x]=5;</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        for (int y=0; y&lt;20;y++){</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">            for (int x=0;x&lt;10;x++){</span>
+<span class="fc" id="L42">                posicion[y][x]=5;</span>
             }
         }
-<span class="fc" id="L61">    }</span>
+<span class="fc" id="L45">    }</span>
     public void establecerPosicion(int posx,int posy){
-<span class="fc" id="L63">        posicionX=posx;</span>
-<span class="fc" id="L64">        posicionY=posy;</span>
-<span class="fc" id="L65">        resetPosicion();</span>
+<span class="fc" id="L47">        posicionX=posx;</span>
+<span class="fc" id="L48">        posicionY=posy;</span>
+<span class="fc" id="L49">        resetPosicion();</span>
         //Verificar que no se salga
-<span class="fc bfc" id="L67" title="All 2 branches covered.">        if(posicionX&gt;6){</span>
-<span class="fc bfc" id="L68" title="All 2 branches covered.">            if(matriz[0][2]==2){</span>
-<span class="fc bfc" id="L69" title="All 2 branches covered.">                switch(posicionX){</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">        if(posicionX&gt;6){</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">            if(matriz[0][2]==2){</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">                switch(posicionX){</span>
                     case 9:
-<span class="fc" id="L71">                        posicionX=posicionX-1;</span>
-<span class="fc" id="L72">                        break;</span>
+<span class="fc" id="L55">                        posicionX=posicionX-1;</span>
+<span class="fc" id="L56">                        break;</span>
                 }
-<span class="fc bfc" id="L74" title="All 2 branches covered.">            }else{if(matriz[0][3]==2){</span>
-<span class="pc bpc" id="L75" title="2 of 3 branches missed.">                    switch(posicionX){</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">            }else{if(matriz[0][3]==2){</span>
+<span class="pc bpc" id="L59" title="2 of 3 branches missed.">                    switch(posicionX){</span>
                         case 8:
-<span class="nc" id="L77">                            posicionX--;</span>
-<span class="nc" id="L78">                            break;</span>
+<span class="nc" id="L61">                            posicionX--;</span>
+<span class="nc" id="L62">                            break;</span>
                         case 9:
-<span class="fc" id="L80">                            posicionX=posicionX-2;</span>
-<span class="fc" id="L81">                            break;</span>
+<span class="fc" id="L64">                            posicionX=posicionX-2;</span>
+<span class="fc" id="L65">                            break;</span>
                     }
                 }else{
-<span class="pc bpc" id="L84" title="2 of 4 branches missed.">                    switch(posicionX){</span>
+<span class="pc bpc" id="L68" title="2 of 4 branches missed.">                    switch(posicionX){</span>
                         case 7:
-<span class="fc" id="L86">                            posicionX--;</span>
-<span class="fc" id="L87">                            break;</span>
+<span class="fc" id="L70">                            posicionX--;</span>
+<span class="fc" id="L71">                            break;</span>
                         case 8:
-<span class="fc" id="L89">                            posicionX=posicionX-2;</span>
-<span class="fc" id="L90">                            break;</span>
+<span class="fc" id="L73">                            posicionX=posicionX-2;</span>
+<span class="fc" id="L74">                            break;</span>
                         case 9:
-<span class="nc" id="L92">                            posicionX=posicionX-3;</span>
+<span class="nc" id="L76">                            posicionX=posicionX-3;</span>
                             break;
                     }
                 }
@@ -97,78 +81,78 @@ public abstract class PieceBase implements iRotator{
         }
         //InsertarPieza
          
-<span class="pc bpc" id="L100" title="1 of 2 branches missed.">        if(matriz[0][0]==2){</span>
-<span class="nc bnc" id="L101" title="All 2 branches missed.">            for (int y=0; y&lt;4;y++){</span>
-<span class="nc bnc" id="L102" title="All 2 branches missed.">                for (int x=1;x&lt;4;x++){</span>
-<span class="nc bnc" id="L103" title="All 2 branches missed.">                    if(getValorMatriz(y,x)==1){</span>
-<span class="nc" id="L104">                        int xx=posicionX+x-1;</span>
-<span class="nc" id="L105">                        int yy=posicionY+y;</span>
-<span class="nc" id="L106">                        setValor1Posicion(yy, xx);</span>
+<span class="fc bfc" id="L84" title="All 2 branches covered.">        if(matriz[0][0]==2){</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">            for (int y=0; y&lt;4;y++){</span>
+<span class="fc bfc" id="L86" title="All 2 branches covered.">                for (int x=1;x&lt;4;x++){</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">                    if(getValorMatriz(y,x)==1){</span>
+<span class="fc" id="L88">                        int xx=posicionX+x-1;</span>
+<span class="fc" id="L89">                        int yy=posicionY+y;</span>
+<span class="fc" id="L90">                        setValor1Posicion(yy, xx);</span>
                     }
                 }
             }
-<span class="fc bfc" id="L110" title="All 4 branches covered.">        }else{if(matriz[0][3]==2){if(matriz[0][2]==2){</span>
-<span class="fc bfc" id="L111" title="All 2 branches covered.">            for (int y=0; y&lt;4;y++){</span>
-<span class="fc bfc" id="L112" title="All 2 branches covered.">                for (int x=1;x&gt;=0;x--){</span>
-<span class="fc bfc" id="L113" title="All 2 branches covered.">                    if(getValorMatriz(y,x)==1){</span>
-<span class="fc" id="L114">                        int xx=posicionX+x;</span>
-<span class="fc" id="L115">                        int yy=posicionY+y;</span>
-<span class="fc" id="L116">                        setValor1Posicion(yy, xx);</span>
+<span class="fc bfc" id="L94" title="All 4 branches covered.">        }else{if(matriz[0][3]==2){if(matriz[0][2]==2){</span>
+<span class="fc bfc" id="L95" title="All 2 branches covered.">            for (int y=0; y&lt;4;y++){</span>
+<span class="fc bfc" id="L96" title="All 2 branches covered.">                for (int x=1;x&gt;=0;x--){</span>
+<span class="fc bfc" id="L97" title="All 2 branches covered.">                    if(getValorMatriz(y,x)==1){</span>
+<span class="fc" id="L98">                        int xx=posicionX+x;</span>
+<span class="fc" id="L99">                        int yy=posicionY+y;</span>
+<span class="fc" id="L100">                        setValor1Posicion(yy, xx);</span>
                     }
                 }
             }}else{
-<span class="fc bfc" id="L120" title="All 2 branches covered.">            for (int y=0; y&lt;4;y++){</span>
-<span class="fc bfc" id="L121" title="All 2 branches covered.">                for (int x=2;x&gt;=0;x--){</span>
-<span class="fc bfc" id="L122" title="All 2 branches covered.">                    if(getValorMatriz(y,x)==1){</span>
-<span class="fc" id="L123">                        int xx=posicionX+x;</span>
-<span class="fc" id="L124">                        int yy=posicionY+y;</span>
-<span class="fc" id="L125">                        setValor1Posicion(yy, xx);</span>
+<span class="fc bfc" id="L104" title="All 2 branches covered.">            for (int y=0; y&lt;4;y++){</span>
+<span class="fc bfc" id="L105" title="All 2 branches covered.">                for (int x=2;x&gt;=0;x--){</span>
+<span class="fc bfc" id="L106" title="All 2 branches covered.">                    if(getValorMatriz(y,x)==1){</span>
+<span class="fc" id="L107">                        int xx=posicionX+x;</span>
+<span class="fc" id="L108">                        int yy=posicionY+y;</span>
+<span class="fc" id="L109">                        setValor1Posicion(yy, xx);</span>
                     }
                 }
             }}
         }else{
-<span class="fc bfc" id="L130" title="All 2 branches covered.">            for (int y=0; y&lt;4;y++){</span>
-<span class="fc bfc" id="L131" title="All 2 branches covered.">                for (int x=0;x&lt;4;x++){</span>
-<span class="fc bfc" id="L132" title="All 2 branches covered.">                    if(getValorMatriz(y,x)==1){</span>
-<span class="fc" id="L133">                        int xx=posicionX+x;</span>
-<span class="fc" id="L134">                        int yy=posicionY+y;</span>
+<span class="fc bfc" id="L114" title="All 2 branches covered.">            for (int y=0; y&lt;4;y++){</span>
+<span class="fc bfc" id="L115" title="All 2 branches covered.">                for (int x=0;x&lt;4;x++){</span>
+<span class="fc bfc" id="L116" title="All 2 branches covered.">                    if(getValorMatriz(y,x)==1){</span>
+<span class="fc" id="L117">                        int xx=posicionX+x;</span>
+<span class="fc" id="L118">                        int yy=posicionY+y;</span>
                         
-<span class="fc" id="L136">                        setValor1Posicion(yy, xx);</span>
+<span class="fc" id="L120">                        setValor1Posicion(yy, xx);</span>
                     }
                 }
             }
         }
         }
-<span class="fc" id="L142">    }</span>
+<span class="fc" id="L126">    }</span>
     public void completarParedIzquierda(){
-<span class="fc bfc" id="L144" title="All 2 branches covered.">        for(int x=0;x&lt;4;x++){</span>
-<span class="fc" id="L145">            int marcador=0;</span>
-<span class="fc bfc" id="L146" title="All 2 branches covered.">            for(int y=0;y&lt;4;y++){</span>
-<span class="fc bfc" id="L147" title="All 2 branches covered.">                if(matriz[y][x]==1){</span>
-<span class="fc" id="L148">                    marcador=1;</span>
+<span class="fc bfc" id="L128" title="All 2 branches covered.">        for(int x=0;x&lt;4;x++){</span>
+<span class="fc" id="L129">            int marcador=0;</span>
+<span class="fc bfc" id="L130" title="All 2 branches covered.">            for(int y=0;y&lt;4;y++){</span>
+<span class="fc bfc" id="L131" title="All 2 branches covered.">                if(matriz[y][x]==1){</span>
+<span class="fc" id="L132">                    marcador=1;</span>
                 }
             }
-<span class="fc bfc" id="L151" title="All 2 branches covered.">            if(marcador==0){</span>
-<span class="fc bfc" id="L152" title="All 2 branches covered.">                for(int y=0;y&lt;4;y++){</span>
-<span class="fc" id="L153">                    setValor2Matriz(y, x);</span>
+<span class="fc bfc" id="L135" title="All 2 branches covered.">            if(marcador==0){</span>
+<span class="fc bfc" id="L136" title="All 2 branches covered.">                for(int y=0;y&lt;4;y++){</span>
+<span class="fc" id="L137">                    setValor2Matriz(y, x);</span>
                 }
             }
         }
-<span class="fc" id="L157">    }</span>
+<span class="fc" id="L141">    }</span>
     public void completarParedDerecha(){
-<span class="fc bfc" id="L159" title="All 2 branches covered.">        for(int x=3;x&gt;0;x--){</span>
-<span class="fc" id="L160">            int marcador=0;</span>
-<span class="fc bfc" id="L161" title="All 2 branches covered.">            for(int y=0;y&lt;4;y++){</span>
-<span class="fc bfc" id="L162" title="All 2 branches covered.">                if(matriz[y][x]==1){</span>
-<span class="fc" id="L163">                    marcador=1;</span>
+<span class="fc bfc" id="L143" title="All 2 branches covered.">        for(int x=3;x&gt;0;x--){</span>
+<span class="fc" id="L144">            int marcador=0;</span>
+<span class="fc bfc" id="L145" title="All 2 branches covered.">            for(int y=0;y&lt;4;y++){</span>
+<span class="fc bfc" id="L146" title="All 2 branches covered.">                if(matriz[y][x]==1){</span>
+<span class="fc" id="L147">                    marcador=1;</span>
                 }
             }
-<span class="fc bfc" id="L166" title="All 2 branches covered.">            if(marcador==0){</span>
-<span class="fc bfc" id="L167" title="All 2 branches covered.">                for(int y=0;y&lt;4;y++){</span>
-<span class="fc" id="L168">                    setValor2Matriz(y, x);</span>
+<span class="fc bfc" id="L150" title="All 2 branches covered.">            if(marcador==0){</span>
+<span class="fc bfc" id="L151" title="All 2 branches covered.">                for(int y=0;y&lt;4;y++){</span>
+<span class="fc" id="L152">                    setValor2Matriz(y, x);</span>
                 } 
             }
         }
-<span class="fc" id="L172">    }</span>
+<span class="fc" id="L156">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

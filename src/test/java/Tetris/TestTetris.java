@@ -28,6 +28,40 @@ public class TestTetris {
         assertEquals(1, t.boardT.getValor(posy, posx));
     }
     @Test
+    public void rotateLeft_trueTest(){
+        Tetris t=new Tetris();
+        Board board=new Board();
+        PieceSquare p=new PieceSquare();
+        t.boardT=board;
+        t.boardT.piezaActiva=p;
+        t.rotateLeft();
+        assertEquals( 1, board.getValor(0,0));
+        assertEquals( 1, board.getValor(0,1));
+        assertEquals( 1, board.getValor(1,1));
+        assertEquals( 1, board.getValor(1,0));       
+    }
+    @Test
+    public void rotateRight_trueTest(){
+        Tetris t=new Tetris();
+        Board board=new Board();
+        PieceSquare p=new PieceSquare();
+        t.boardT=board;
+        t.boardT.piezaActiva=p;
+        t.rotateRight();
+        assertEquals( 1, board.getValor(0,0));
+        assertEquals( 1, board.getValor(0,1));
+        assertEquals( 1, board.getValor(1,1));
+        assertEquals( 1, board.getValor(1,0));       
+    }
+    @Test
+    public void estate_test(){
+        Tetris t=new Tetris();
+        Board board=new Board();
+        t.boardT=board;
+        assertEquals(0,t.state());
+        
+    } 
+    @Test
     public void state0_test(){
         Tetris t=new Tetris();
         Board board=new Board();
@@ -35,6 +69,7 @@ public class TestTetris {
         assertEquals(0,t.boardT.getEstado());
         
     } 
+
     @Test
     public void state1_test(){
         Tetris t=new Tetris();
