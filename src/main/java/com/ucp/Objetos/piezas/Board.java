@@ -4,11 +4,18 @@ import java.util.Arrays;
 
 public class Board {
     public int matriz[][]=new int [20][10];
+    private String name ="";
     public PieceBase piezaActiva;
     protected int estado=0;
     public int contador=0;
     public Board(){
         cargarMatriz_0();
+    }
+    public String setName(){
+        return name;
+    }
+    public void setName(String x){
+        name=x;
     }
     public void posicion0(){
         for(int y=0;y<20;y++){
