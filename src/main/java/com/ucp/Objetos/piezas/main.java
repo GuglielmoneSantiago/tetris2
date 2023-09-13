@@ -2,15 +2,23 @@ package com.ucp.Objetos.piezas;
 
 public class main { public static void main(String[] args) {
     Board board=new Board();
-    PieceDogLeft p=new PieceDogLeft();
-    board.piezaActiva=p;
-    board.insertarPieza();
-    board.piezaActiva.setLado(0);
-    board.piezaActiva.completarParedIzquierda();
-    board.actualizarBoard0();
-    board.piezaActiva.establecerPosicion(0, 0);
-    board.actualizarBoard1();
+    
+    for(int x=0;x<4;x++){
+        PieceSquare s=new PieceSquare();
+        board.piezaActiva=s;
+        board.insertarPieza();
+        board.bajarFicha();
+        board.piezaActiva.establecerPosicion(x*2, 0);
+        for(int y=0;y<20;y++){
+            board.bajarFicha();
+        }
 
+    }
+    
+    
+    
+    
+    
     // Inicializa y muestra la primera pieza
     System.out.print("  piezaActiva1 \n");
     board.piezaActiva.printBoard();

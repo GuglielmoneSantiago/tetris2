@@ -3,9 +3,10 @@ package com.ucp.Objetos.Tetris;
 import com.ucp.Objetos.piezas.Board;
 
 public class Tetris {
-    Board boardT=new Board();
-    Clock clock=new Clock();
-    public void start(){
+    public Board boardT=new Board();
+    public Clock clock=new Clock();
+    
+    public void start(){     
         boardT.generarFichaAleatoria();
         boardT.insertarPieza();
     }
