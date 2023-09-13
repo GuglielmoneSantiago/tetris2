@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: Piezas.PieceLLeftTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in Piezas.PieceLLeftTest
-entrar_piezaIzquierda(Piezas.PieceLLeftTest)  Time elapsed: 0 s  <<< FAILURE!
-java.lang.AssertionError: expected:<1> but was:<0>
-	at Piezas.PieceLLeftTest.entrar_piezaIzquierda(PieceLLeftTest.java:96)
-
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in Piezas.PieceLLeftTest

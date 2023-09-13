@@ -87,6 +87,7 @@ public class PieceStickTest {
         PieceStick p= new PieceStick();
         Board b=new Board();
         p.setLado(0);
+        p.lados();
         b.piezaActiva=p;
         b.piezaActiva.completarParedDerecha();
         b.piezaActiva.establecerPosicion(9,0); 
@@ -103,6 +104,7 @@ public class PieceStickTest {
         PieceStick p= new PieceStick();
         Board b=new Board();
         p.setLado(0);
+        p.lados();
         b.piezaActiva=p;
         b.piezaActiva.establecerPosicion(0,0); 
         b.posicion1();

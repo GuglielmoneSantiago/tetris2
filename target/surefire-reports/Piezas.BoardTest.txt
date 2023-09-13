@@ -1,12 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: Piezas.BoardTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.05 s <<< FAILURE! - in Piezas.BoardTest
-funcion_bajarFich(Piezas.BoardTest)  Time elapsed: 0.009 s  <<< FAILURE!
-java.lang.AssertionError: expected:<1> but was:<5>
-	at Piezas.BoardTest.funcion_bajarFich(BoardTest.java:140)
-
-funcion_rotarIzquierda_meterFicha(Piezas.BoardTest)  Time elapsed: 0 s  <<< FAILURE!
-java.lang.AssertionError: expected:<1> but was:<5>
-	at Piezas.BoardTest.funcion_rotarIzquierda_meterFicha(BoardTest.java:83)
+Tests run: 9, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.06 s <<< FAILURE! - in Piezas.BoardTest
+funcion_rotarDerecha_meterFicha(Piezas.BoardTest)  Time elapsed: 0.005 s  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at Piezas.BoardTest.funcion_rotarDerecha_meterFicha(BoardTest.java:128)
 

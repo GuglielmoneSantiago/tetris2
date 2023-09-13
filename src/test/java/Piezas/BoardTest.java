@@ -7,6 +7,15 @@ import org.junit.Test;
 import com.ucp.Objetos.piezas.*;
 public class BoardTest {
     @Test
+    public void actualizarBoard0_Test(){
+        Board b=new Board();
+        PieceDogLeft p= new PieceDogLeft();
+        p.establecerPosicion(0,0);
+        b.piezaActiva=p;
+        b.actualizarBoard0();
+        assertEquals(0,b.getValor(0,0));
+    }
+    @Test
     public void setName_getName_board_Test(){
         Board b=new Board();
         b.setName("tablero");
@@ -74,8 +83,8 @@ public class BoardTest {
         b.piezaActiva=p;
         p.setLado(1);
         p.lados();
-        b.insertarPieza();
         b.piezaActiva.establecerPosicion(0,0);
+        b.posicion1();
         assertEquals( 1, p.getValorMatriz(0,1));
         assertEquals( 1, p.getValorMatriz(1,1));
         assertEquals( 1, p.getValorMatriz(2,1));
@@ -116,7 +125,7 @@ public class BoardTest {
         assertEquals( 1, p.getValorPosicion(3,1));
         b.rotateRight();
         //ficha
-        assertEquals( 1, p.getValorPosicion(1,0));
+        assertEquals( 1, p.getValorMatriz(1,0));
         assertEquals( 1, p.getValorPosicion(1,1));
         assertEquals( 1, p.getValorPosicion(1,2));
         assertEquals( 1, p.getValorPosicion(1,3));
@@ -132,6 +141,7 @@ public class BoardTest {
         Board board=new Board();
         PieceStick piece=new PieceStick();
         piece.setLado(0);
+        piece.lados();
         board.piezaActiva=piece;
         piece.establecerPosicion(0, 0);
         for(int i=0;i<20;i++){

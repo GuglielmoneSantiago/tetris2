@@ -135,8 +135,8 @@ public class Board {
 <span class="fc" id="L135">        boolean opcion=true;</span>
 <span class="fc bfc" id="L136" title="All 2 branches covered.">        for(int y=0;y&lt;20;y++){</span>
 <span class="fc bfc" id="L137" title="All 2 branches covered.">            for(int x=0;x&lt;10;x++){</span>
-<span class="pc bpc" id="L138" title="1 of 2 branches missed.">                if(matriz[y][x]==piezaActiva.posicion[y][x]){</span>
-<span class="nc" id="L139">                    opcion=false;</span>
+<span class="fc bfc" id="L138" title="All 2 branches covered.">                if(matriz[y][x]==piezaActiva.posicion[y][x]){</span>
+<span class="fc" id="L139">                    opcion=false;</span>
                 }
             }
         }
@@ -154,10 +154,10 @@ public class Board {
 <span class="fc" id="L154">        piezaActiva.lados();</span>
 <span class="fc" id="L155">        piezaActiva.resetPosicion();</span>
 <span class="fc" id="L156">        piezaActiva.establecerPosicion((piezaActiva.posicionX),(piezaActiva.posicionY));</span>
-<span class="pc bpc" id="L157" title="1 of 2 branches missed.">        if(puedeGirar()==false){</span>
-<span class="nc" id="L158">            piezaActiva.rotateLeft();</span>
-<span class="nc" id="L159">            piezaActiva.resetPosicion();</span>
-<span class="nc" id="L160">            piezaActiva.establecerPosicion((piezaActiva.posicionX),(piezaActiva.posicionY));</span>
+<span class="fc bfc" id="L157" title="All 2 branches covered.">        if(puedeGirar()==false){</span>
+<span class="fc" id="L158">            piezaActiva.rotateLeft();</span>
+<span class="fc" id="L159">            piezaActiva.resetPosicion();</span>
+<span class="fc" id="L160">            piezaActiva.establecerPosicion((piezaActiva.posicionX),(piezaActiva.posicionY));</span>
         }
 <span class="fc bfc" id="L162" title="All 2 branches covered.">        for(int y=0;y&lt;20;y++){</span>
 <span class="fc bfc" id="L163" title="All 2 branches covered.">            for(int x=0;x&lt;10;x++){</span>
@@ -171,8 +171,8 @@ public class Board {
     public void rotateLeft(){
 <span class="fc bfc" id="L172" title="All 2 branches covered.">        for(int y=0;y&lt;20;y++){</span>
 <span class="fc bfc" id="L173" title="All 2 branches covered.">            for(int x=0;x&lt;10;x++){</span>
-<span class="pc bpc" id="L174" title="1 of 2 branches missed.">                if(piezaActiva.posicion[y][x]==1){</span>
-<span class="nc" id="L175">                    matriz[y][x]=0;</span>
+<span class="fc bfc" id="L174" title="All 2 branches covered.">                if(piezaActiva.posicion[y][x]==1){</span>
+<span class="fc" id="L175">                    matriz[y][x]=0;</span>
                 }
             }
         }
@@ -278,7 +278,7 @@ public class Board {
     public void insertarPieza(){
 <span class="fc" id="L279">        int numero = (int)(Math.random()*9);</span>
 <span class="fc bfc" id="L280" title="All 2 branches covered.">        if(getEstado()&lt;2){</span>
-<span class="pc bpc" id="L281" title="3 of 11 branches missed.">        switch(numero){</span>
+<span class="pc bpc" id="L281" title="4 of 11 branches missed.">        switch(numero){</span>
             case 0:
 <span class="fc" id="L283">                piezaActiva.completarParedIzquierda();</span>
 <span class="fc" id="L284">                piezaActiva.establecerPosicion(numero,0);</span>
@@ -321,32 +321,32 @@ public class Board {
                 }
 <span class="fc" id="L322">                break;</span>
             case 2:
-<span class="nc" id="L324">                piezaActiva.establecerPosicion(numero,0);</span>
-<span class="nc bnc" id="L325" title="All 2 branches missed.">                for(int y=0;y&lt;20;y++){</span>
-<span class="nc bnc" id="L326" title="All 2 branches missed.">                    for(int x=0;x&lt;10;x++){</span>
-<span class="nc bnc" id="L327" title="All 2 branches missed.">                        if(piezaActiva.posicion[y][x]==matriz[y][x]){</span>
+<span class="fc" id="L324">                piezaActiva.establecerPosicion(numero,0);</span>
+<span class="fc bfc" id="L325" title="All 2 branches covered.">                for(int y=0;y&lt;20;y++){</span>
+<span class="fc bfc" id="L326" title="All 2 branches covered.">                    for(int x=0;x&lt;10;x++){</span>
+<span class="pc bpc" id="L327" title="1 of 2 branches missed.">                        if(piezaActiva.posicion[y][x]==matriz[y][x]){</span>
 <span class="nc" id="L328">                            setEstado(2);</span>
 <span class="nc" id="L329">                            return;</span>
                         }
                     }
                 }
-<span class="nc" id="L333">                piezaActiva.posicionX=numero;</span>
-<span class="nc" id="L334">                piezaActiva.posicionY=0;</span>
-<span class="nc bnc" id="L335" title="All 2 branches missed.">                for(int y=0;y&lt;20;y++){</span>
-<span class="nc bnc" id="L336" title="All 2 branches missed.">                    for(int x=0;x&lt;10;x++){</span>
-<span class="nc bnc" id="L337" title="All 2 branches missed.">                        if(piezaActiva.posicion[y][x]==1){</span>
-<span class="nc" id="L338">                            matriz[y][x]=1;</span>
+<span class="fc" id="L333">                piezaActiva.posicionX=numero;</span>
+<span class="fc" id="L334">                piezaActiva.posicionY=0;</span>
+<span class="fc bfc" id="L335" title="All 2 branches covered.">                for(int y=0;y&lt;20;y++){</span>
+<span class="fc bfc" id="L336" title="All 2 branches covered.">                    for(int x=0;x&lt;10;x++){</span>
+<span class="fc bfc" id="L337" title="All 2 branches covered.">                        if(piezaActiva.posicion[y][x]==1){</span>
+<span class="fc" id="L338">                            matriz[y][x]=1;</span>
                         }
                     }
                 }
-<span class="nc" id="L342">                break;</span>
+<span class="fc" id="L342">                break;</span>
             case 3:
 <span class="fc" id="L344">                piezaActiva.establecerPosicion(numero,0);</span>
 <span class="fc bfc" id="L345" title="All 2 branches covered.">                for(int y=0;y&lt;20;y++){</span>
 <span class="fc bfc" id="L346" title="All 2 branches covered.">                    for(int x=0;x&lt;10;x++){</span>
-<span class="pc bpc" id="L347" title="1 of 2 branches missed.">                        if(piezaActiva.posicion[y][x]==matriz[y][x]){</span>
-<span class="nc" id="L348">                            setEstado(2);</span>
-<span class="nc" id="L349">                            return;</span>
+<span class="fc bfc" id="L347" title="All 2 branches covered.">                        if(piezaActiva.posicion[y][x]==matriz[y][x]){</span>
+<span class="fc" id="L348">                            setEstado(2);</span>
+<span class="fc" id="L349">                            return;</span>
                         }
                     }
                 }
@@ -361,25 +361,25 @@ public class Board {
                 }
 <span class="fc" id="L362">                break;</span>
             case 4:
-<span class="fc" id="L364">                piezaActiva.establecerPosicion(numero,0);</span>
-<span class="fc bfc" id="L365" title="All 2 branches covered.">                for(int y=0;y&lt;20;y++){</span>
-<span class="fc bfc" id="L366" title="All 2 branches covered.">                    for(int x=0;x&lt;10;x++){</span>
-<span class="pc bpc" id="L367" title="1 of 2 branches missed.">                        if(piezaActiva.posicion[y][x]==matriz[y][x]){</span>
+<span class="nc" id="L364">                piezaActiva.establecerPosicion(numero,0);</span>
+<span class="nc bnc" id="L365" title="All 2 branches missed.">                for(int y=0;y&lt;20;y++){</span>
+<span class="nc bnc" id="L366" title="All 2 branches missed.">                    for(int x=0;x&lt;10;x++){</span>
+<span class="nc bnc" id="L367" title="All 2 branches missed.">                        if(piezaActiva.posicion[y][x]==matriz[y][x]){</span>
 <span class="nc" id="L368">                            setEstado(2);</span>
 <span class="nc" id="L369">                            return;</span>
                         }
                     }
                 }
-<span class="fc" id="L373">                piezaActiva.posicionX=numero;</span>
-<span class="fc" id="L374">                piezaActiva.posicionY=0;</span>
-<span class="fc bfc" id="L375" title="All 2 branches covered.">                for(int y=0;y&lt;20;y++){</span>
-<span class="fc bfc" id="L376" title="All 2 branches covered.">                    for(int x=0;x&lt;10;x++){</span>
-<span class="fc bfc" id="L377" title="All 2 branches covered.">                        if(piezaActiva.posicion[y][x]==1){</span>
-<span class="fc" id="L378">                            matriz[y][x]=1;</span>
+<span class="nc" id="L373">                piezaActiva.posicionX=numero;</span>
+<span class="nc" id="L374">                piezaActiva.posicionY=0;</span>
+<span class="nc bnc" id="L375" title="All 2 branches missed.">                for(int y=0;y&lt;20;y++){</span>
+<span class="nc bnc" id="L376" title="All 2 branches missed.">                    for(int x=0;x&lt;10;x++){</span>
+<span class="nc bnc" id="L377" title="All 2 branches missed.">                        if(piezaActiva.posicion[y][x]==1){</span>
+<span class="nc" id="L378">                            matriz[y][x]=1;</span>
                         }
                     }
                 }
-<span class="fc" id="L382">                break;</span>
+<span class="nc" id="L382">                break;</span>
             case 5:
 <span class="fc" id="L384">                piezaActiva.establecerPosicion(numero,0);</span>
 <span class="fc bfc" id="L385" title="All 2 branches covered.">                for(int y=0;y&lt;20;y++){</span>
@@ -421,25 +421,25 @@ public class Board {
                 }
 <span class="fc" id="L422">                break;</span>
             case 7:
-<span class="fc" id="L424">                piezaActiva.establecerPosicion(numero,0);</span>
-<span class="fc bfc" id="L425" title="All 2 branches covered.">                for(int y=0;y&lt;20;y++){</span>
-<span class="fc bfc" id="L426" title="All 2 branches covered.">                    for(int x=0;x&lt;10;x++){</span>
-<span class="fc bfc" id="L427" title="All 2 branches covered.">                        if(piezaActiva.posicion[y][x]==matriz[y][x]){</span>
-<span class="fc" id="L428">                            setEstado(2);</span>
-<span class="fc" id="L429">                            return;</span>
+<span class="nc" id="L424">                piezaActiva.establecerPosicion(numero,0);</span>
+<span class="nc bnc" id="L425" title="All 2 branches missed.">                for(int y=0;y&lt;20;y++){</span>
+<span class="nc bnc" id="L426" title="All 2 branches missed.">                    for(int x=0;x&lt;10;x++){</span>
+<span class="nc bnc" id="L427" title="All 2 branches missed.">                        if(piezaActiva.posicion[y][x]==matriz[y][x]){</span>
+<span class="nc" id="L428">                            setEstado(2);</span>
+<span class="nc" id="L429">                            return;</span>
                         }
                     }
                 }
-<span class="fc" id="L433">                piezaActiva.posicionX=numero;</span>
-<span class="fc" id="L434">                piezaActiva.posicionY=0;</span>
-<span class="fc bfc" id="L435" title="All 2 branches covered.">                for(int y=0;y&lt;20;y++){</span>
-<span class="fc bfc" id="L436" title="All 2 branches covered.">                    for(int x=0;x&lt;10;x++){</span>
-<span class="fc bfc" id="L437" title="All 2 branches covered.">                        if(piezaActiva.posicion[y][x]==1){</span>
-<span class="fc" id="L438">                            matriz[y][x]=1;</span>
+<span class="nc" id="L433">                piezaActiva.posicionX=numero;</span>
+<span class="nc" id="L434">                piezaActiva.posicionY=0;</span>
+<span class="nc bnc" id="L435" title="All 2 branches missed.">                for(int y=0;y&lt;20;y++){</span>
+<span class="nc bnc" id="L436" title="All 2 branches missed.">                    for(int x=0;x&lt;10;x++){</span>
+<span class="nc bnc" id="L437" title="All 2 branches missed.">                        if(piezaActiva.posicion[y][x]==1){</span>
+<span class="nc" id="L438">                            matriz[y][x]=1;</span>
                         }
                     }
                 }
-<span class="fc" id="L442">                break;</span>
+<span class="nc" id="L442">                break;</span>
             case 8:
 <span class="fc" id="L444">                piezaActiva.establecerPosicion(numero,0);</span>
 <span class="fc bfc" id="L445" title="All 2 branches covered.">                for(int y=0;y&lt;20;y++){</span>
