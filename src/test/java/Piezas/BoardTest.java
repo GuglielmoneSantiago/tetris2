@@ -22,15 +22,21 @@ public class BoardTest {
         assertNotNull(b.piezaActiva);
     }
     @Test
-    public void funcion_InsertarFicha_notNullTest(){
+    public void funcion_InsertarFicha_TrueTest(){
         Board b=new Board();
         b.generarFichaAleatoria();
         b.insertarPieza();
-        for(int i=0;i<10;i++){
-            if(b.matriz[0][i]==1){
-                
+        int posx=0;
+        int posy=0;
+        for(int x=0;x<10;x++){
+            for(int y=0;y<2;y++){
+                if(b.matriz[y][x]==1){
+                    posx=x;
+                    posy=y;
+                }
             }
         }
+        assertEquals(1,b.getValor(posy,posx));
     }
     @Test
     public void funcion_rotarIzquierda_meterFicha(){

@@ -5,8 +5,45 @@ import java.util.Arrays;
 public class Board {
     public int matriz[][]=new int [20][10];
     public PieceBase piezaActiva;
+    protected int estado=0;
+    public int contador=0;
     public Board(){
         cargarMatriz_0();
+    }
+    public void posicion0(){
+        for(int y=0;y<20;y++){
+            for(int x=0;x<10;x++){
+                if(matriz[y][x]==piezaActiva.posicion[y][x]){
+                    matriz[y][x]=0;
+                }
+            }
+        }
+    }
+    public void posicion1(){
+        for(int y=0;y<20;y++){
+            for(int x=0;x<10;x++){
+                if(matriz[y][x]==piezaActiva.posicion[y][x]){
+                    matriz[y][x]=1;
+                }
+            }
+        }
+    }
+    public void mirarEstado(){
+        if(getEstado()!=2){
+            for(int y=0;y<20;y++){
+                for(int x=0;x<10;x++){
+                    if(getValor(y, x)==1){
+                        setEstado(1);;
+                    }
+                }
+            }
+        }
+    }
+    public int getEstado(){
+        return estado;
+    }
+    public void setEstado(int x){
+        estado=x;
     }
     public int getValor(int posy,int posx){
         return matriz[posy][posx];
@@ -73,6 +110,7 @@ public class Board {
                 // Establece la fila superior como una fila vacía
                 Arrays.fill(matriz[0], 0);
                 fila++; // Revisa la fila actual nuevamente, ya que ahora contiene las filas de arriba
+                contador++;
             }
         }
     }
@@ -214,52 +252,122 @@ public class Board {
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
                 piezaActiva.completarParedIzquierda();
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
             case 1:
                 piezaActiva.establecerPosicion(numero,0);
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
             case 2:
                 piezaActiva.establecerPosicion(numero,0);
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
             case 3:
                 piezaActiva.establecerPosicion(numero,0);
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
             case 4:
                 piezaActiva.establecerPosicion(numero,0);
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
             case 5:
                 piezaActiva.establecerPosicion(numero,0);
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
             case 6:
                 piezaActiva.establecerPosicion(numero,0);
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
             case 7:
                 piezaActiva.establecerPosicion(numero,0);
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
             case 8:
                 piezaActiva.establecerPosicion(numero,0);
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
             case 9:
                 piezaActiva.establecerPosicion(numero,0);
                 piezaActiva.posicionX=numero;
                 piezaActiva.posicionY=0;
                 piezaActiva.completarParedDerecha();
+                for(int y=0;y<20;y++){
+                    for(int x=0;x<10;x++){
+                        if(piezaActiva.posicion[y][x]==1){
+                            matriz[y][x]=1;
+                        }
+                    }
+                }
                 break;
         }
     }

@@ -4,13 +4,19 @@ public class main {
     public static void main(String[] args) {
     Board board=new Board();
     
+    for(int x=0;x<4;x++){
+        PieceSquare s=new PieceSquare();
+        board.piezaActiva=s;
+        board.insertarPieza();
+        board.bajarFicha();
+        board.piezaActiva.establecerPosicion(x*2, 0);
+        for(int y=0;y<20;y++){
+            board.bajarFicha();
+        }
+
+    }
     
-    PieceStick p=new PieceStick();
-    board.piezaActiva=p;
-    board.piezaActiva.setLado(1);
-    board.piezaActiva.lados();
-    board.piezaActiva.completarParedDerecha();
-    board.piezaActiva.establecerPosicion(9,0);
+    
     
     
     
