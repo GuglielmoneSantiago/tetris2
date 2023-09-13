@@ -2,11 +2,11 @@ GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_
 Tetris,com.ucp.Objetos.Tetris,Tetris,0,52,2,2,0,17,2,6,0,6
 Tetris,com.ucp.Objetos.Tetris,Clock,0,19,0,0,0,6,0,3,0,3
 Tetris,com.ucp.Objetos.piezas,PieceSquare,0,36,1,1,0,15,1,4,0,4
-Tetris,com.ucp.Objetos.piezas,Board,273,1291,50,202,56,237,32,125,0,24
+Tetris,com.ucp.Objetos.piezas,Board,165,1399,30,222,35,258,21,136,0,24
 Tetris,com.ucp.Objetos.piezas,PieceDogLeft,3,96,5,6,1,29,5,5,0,4
-Tetris,com.ucp.Objetos.piezas,PieceBase,14,420,4,69,4,88,4,46,0,12
+Tetris,com.ucp.Objetos.piezas,PieceBase,7,427,3,70,2,90,3,47,0,12
 Tetris,com.ucp.Objetos.piezas,PieceT,3,124,3,6,1,39,3,7,0,4
 Tetris,com.ucp.Objetos.piezas,PieceLLeft,3,124,3,6,1,39,3,7,0,4
 Tetris,com.ucp.Objetos.piezas,PieceDogRight,3,84,3,4,1,27,3,5,0,4
-Tetris,com.ucp.Objetos.piezas,PieceStick,0,87,1,6,0,28,1,7,0,4
+Tetris,com.ucp.Objetos.piezas,PieceStick,0,87,2,5,0,28,2,6,0,4
 Tetris,com.ucp.Objetos.piezas,PieceLRight,3,124,3,6,1,39,3,7,0,4

@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: Piezas.BoardTest
 -------------------------------------------------------------------------------
-Tests run: 9, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.06 s <<< FAILURE! - in Piezas.BoardTest
-funcion_rotarDerecha_meterFicha(Piezas.BoardTest)  Time elapsed: 0.005 s  <<< FAILURE!
-java.lang.AssertionError: expected:<1> but was:<0>
-	at Piezas.BoardTest.funcion_rotarDerecha_meterFicha(BoardTest.java:128)
-
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.062 s - in Piezas.BoardTest
