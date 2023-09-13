@@ -32,7 +32,7 @@ public class PieceLLeft extends PieceBase {
                 setValor1Matriz(1, 1);
                 setValor1Matriz(1, 2);
                 setValor1Matriz(0, 2);
-                altura=2;
+                altura=1;
                 break;
             case 1: //izquierda
                 setValor1Matriz(0, 1);

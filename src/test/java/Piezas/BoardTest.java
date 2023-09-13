@@ -16,6 +16,28 @@ public class BoardTest {
         }
     }
     @Test
+    public void Borrar_FilaLlena_TrueTest(){
+        Board b=new Board();
+        for(int x=0;x<5;x++){
+            PieceSquare s=new PieceSquare();
+            b.piezaActiva=s;
+            b.piezaActiva.establecerPosicion(x*2, 0);
+            for(int y=0;y<20;y++){
+                b.bajarFicha();
+            }
+        }
+        PieceSquare s=new PieceSquare();
+        b.piezaActiva=s;
+        b.piezaActiva.completarParedDerecha();
+        b.piezaActiva.establecerPosicion(9, 0);
+        for(int y=0;y<20;y++){
+            b.bajarFicha();
+        }
+        assertEquals(1, b.getValor(19, 0));
+        b.borrarFilaLlena();
+        assertEquals(0, b.getValor(19, 0));
+    }
+    @Test
     public void funcion_generarFichaAleatoria_notNullTest(){
         Board b=new Board();
         b.generarFichaAleatoria();

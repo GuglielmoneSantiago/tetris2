@@ -86,32 +86,29 @@ public class PieceStickTest {
     public void entrar_piezaDerecha(){
         PieceStick p= new PieceStick();
         Board b=new Board();
+        p.setLado(0);
         b.piezaActiva=p;
-        b.insertarPieza();
         b.piezaActiva.completarParedDerecha();
-        b.actualizarBoard0();
-        b.piezaActiva.establecerPosicion(0, 0);
-        b.actualizarBoard1();
-        b.piezaActiva.establecerPosicion(9,0);  
-      
+        b.piezaActiva.establecerPosicion(9,0); 
+        b.posicion1();
+        assertEquals(1,b.getValor(1,6));
+        assertEquals(1,b.getValor(1,7));
+        assertEquals(1,b.getValor(1,8));
+        assertEquals(1,b.getValor(1,9));
+        
     }
 
         @Test
     public void entrar_piezaIzquierda(){
         PieceStick p= new PieceStick();
         Board b=new Board();
+        p.setLado(0);
         b.piezaActiva=p;
-        b.insertarPieza();
-        b.piezaActiva.setLado(0);
-        b.piezaActiva.completarParedIzquierda();
-        b.actualizarBoard0();
-        b.piezaActiva.establecerPosicion(0, 0);
-        b.actualizarBoard1();
-        /*  assertEquals(1,b.getValor(1,0));
+        b.piezaActiva.establecerPosicion(0,0); 
+        b.posicion1();
+        assertEquals(1,b.getValor(1,0));
         assertEquals(1,b.getValor(1,1));
         assertEquals(1,b.getValor(1,2));
-        assertEquals(1,b.getValor(1,3));   */
-    
-
+        assertEquals(1,b.getValor(1,3));
     }
 }

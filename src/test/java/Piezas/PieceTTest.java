@@ -9,10 +9,12 @@ public class PieceTTest {
     @Test
     public void Crear_PiezaT(){
        PieceT p=new PieceT();
-       assertEquals( 1, p.getValorMatriz(1,1));
+       p.setLado(0);
+       p.lados();
+       assertEquals( 1, p.getValorMatriz(0,1));
        assertEquals( 1, p.getValorMatriz(1,1));
        assertEquals( 1, p.getValorMatriz(1,2));
-       assertEquals( 1, p.getValorMatriz(1,1)); 
+       assertEquals( 1, p.getValorMatriz(1,0)); 
     }
     @Test
     public void insertar_FichaEnPosicion(){
@@ -30,6 +32,7 @@ public class PieceTTest {
     public void funcion_completarParedDerecha(){
         PieceT p=new PieceT();
         p.setLado(0);
+        p.lados();
         p.completarParedDerecha();
         assertEquals( 2, p.getValorMatriz(0,3));
         assertEquals( 2, p.getValorMatriz(1,3));
@@ -61,17 +64,16 @@ public class PieceTTest {
     public void entrar_piezaDerecha(){
         PieceT p= new PieceT();
         Board b=new Board();
+        p.setLado(0);
+        p.lados();
         b.piezaActiva=p;
-        b.insertarPieza();
         b.piezaActiva.completarParedDerecha();
-        b.actualizarBoard0();
-        b.piezaActiva.establecerPosicion(0, 0);
-        b.actualizarBoard1();
         b.piezaActiva.establecerPosicion(9,0); 
-        assertEquals(1,b.getValor(1,1));
-        assertEquals(1,b.getValor(1,1));
-        assertEquals(1,b.getValor(1,2));
-        assertEquals(1,b.getValor(1,1));
+        b.actualizarBoard1();
+        assertEquals(1,b.getValor(0,8));
+        assertEquals(1,b.getValor(1,8));
+        assertEquals(1,b.getValor(1,9));
+        assertEquals(1,b.getValor(1,7));
 
     }
 
@@ -79,17 +81,16 @@ public class PieceTTest {
     public void entrar_piezaIzquierda(){
         PieceT p= new PieceT();
         Board b=new Board();
+        p.setLado(0);
+        p.lados();
         b.piezaActiva=p;
-        b.insertarPieza();
-        b.piezaActiva.setLado(1);
-        b.piezaActiva.completarParedIzquierda();
-        b.actualizarBoard0();
-        b.piezaActiva.establecerPosicion(0, 0);
+        b.piezaActiva.completarParedDerecha();
+        b.piezaActiva.establecerPosicion(0,0); 
         b.actualizarBoard1();
-       /*/  assertEquals(1,b.getValor(1,0));   
-        assertEquals(1,b.getValor(1,1));  
-        assertEquals(1,b.getValor(2,1));  
-        assertEquals(1,b.getValor(1,0)); */
+        assertEquals(1,b.getValor(0,1));
+        assertEquals(1,b.getValor(1,1));
+        assertEquals(1,b.getValor(1,2));
+        assertEquals(1,b.getValor(1,0));
   
     }
 

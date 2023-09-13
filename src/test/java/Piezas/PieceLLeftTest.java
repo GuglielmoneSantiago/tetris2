@@ -10,8 +10,10 @@ import com.ucp.Objetos.piezas.PieceLLeft;
 
 public class PieceLLeftTest {
      @Test
-    public void Crear_PiezaL(){
+    public void Crear_PiezaLLeft(){
         PieceLLeft p=new PieceLLeft();
+        p.setLado(0);
+        p.lados();
         assertEquals( 1, p.getValorMatriz(1,0));
         assertEquals( 1, p.getValorMatriz(1,1));
         assertEquals( 1, p.getValorMatriz(1,2));
@@ -67,17 +69,16 @@ public class PieceLLeftTest {
     public void entrar_piezaDerecha(){
         PieceLLeft p= new PieceLLeft();
         Board b=new Board();
+        p.setLado(0);
         b.piezaActiva=p;
-        b.insertarPieza();
+        
         b.piezaActiva.completarParedDerecha();
-        b.actualizarBoard0();
-        b.piezaActiva.establecerPosicion(0, 0);
-        b.actualizarBoard1();
-        b.piezaActiva.establecerPosicion(9,0); 
-       /* assertEquals(1,b.getValor(1,0));
-        assertEquals(1,b.getValor(1,1));
-        assertEquals(1,b.getValor(2,9));
-        assertEquals(1,b.getValor(2,8)); */
+        b.piezaActiva.establecerPosicion(9,0);
+        b.posicion1(); 
+        assertEquals(1,b.getValor(0,9));
+        assertEquals(1,b.getValor(1,9));
+        assertEquals(1,b.getValor(1,8));
+        assertEquals(1,b.getValor(1,7)); 
         
     }
 
@@ -92,10 +93,10 @@ public class PieceLLeftTest {
         b.actualizarBoard0();
         b.piezaActiva.establecerPosicion(0, 0);
         b.actualizarBoard1();
-        /*assertEquals(1,b.getValor(0,1));   
+        assertEquals(1,b.getValor(0,1));   
         assertEquals(1,b.getValor(0,1));  
         assertEquals(1,b.getValor(1,2));  
-        assertEquals(1,b.getValor(1,0));  */
+        assertEquals(1,b.getValor(1,0));
     
           
     }

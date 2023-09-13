@@ -126,7 +126,7 @@ public abstract class PieceBase implements iRotator{
                     }
                 }
             }}
-        }else{System.out.print(posx);
+        }else{
             for (int y=0; y<4;y++){
                 for (int x=0;x<4;x++){
                     if(getValorMatriz(y,x)==1){

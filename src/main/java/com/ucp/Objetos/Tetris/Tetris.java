@@ -20,8 +20,8 @@ public class Tetris {
             boardT.rotateRight();;
         }
     }
-    public void state(){
-        
+    public int state(){
+        return boardT.getEstado();
     }
     public void tick(){
         clock.board=boardT;

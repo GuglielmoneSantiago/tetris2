@@ -26,5 +26,10 @@ public class TestTetris {
         assertEquals(1, t.boardT.getValor(posy, posx));
     }
     @Test
-    
+    public void state_test(){
+        Tetris t=new Tetris();
+        assertEquals(0,t.boardT.getEstado());
+        t.start();
+        assertEquals(1,t.boardT.getEstado());
+    } 
 }

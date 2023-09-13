@@ -62,17 +62,17 @@ public class PieceDogRightTest{
 public void entrar_piezaDerecha(){
     PieceDogRight p= new PieceDogRight();
     Board b=new Board();
+    p.setLado(0);
     b.piezaActiva=p;
     b.insertarPieza();
     b.piezaActiva.completarParedDerecha();
-    b.actualizarBoard0();
-    b.piezaActiva.establecerPosicion(0, 0);
-    b.actualizarBoard1();
-    b.piezaActiva.establecerPosicion(9,0); 
-    /*assertEquals(1,b.getValor(2,0));
-    assertEquals(1,b.getValor(2,1));
-    assertEquals(1,b.getValor(1,1));
-    assertEquals(1,b.getValor(1,2)); */
+    b.posicion0();
+    b.piezaActiva.establecerPosicion(9,0);
+    b.posicion1(); 
+    assertEquals(1,b.getValor(2,7));
+    assertEquals(1,b.getValor(2,8));
+    assertEquals(1,b.getValor(1,8));
+    assertEquals(1,b.getValor(1,9)); 
 
 }
 
@@ -82,15 +82,15 @@ public void entrar_piezaIzquierda(){
     Board b=new Board();
     b.piezaActiva=p;
     b.insertarPieza();
-    b.piezaActiva.setLado(1);
+    b.piezaActiva.setLado(0);
     b.piezaActiva.completarParedIzquierda();
-    b.actualizarBoard0();
+    b.posicion0();
     b.piezaActiva.establecerPosicion(0, 0);
-    b.actualizarBoard1();
-   /*  assertEquals(1,b.getValor(1,1));   
+    b.posicion1();
+    assertEquals(1,b.getValor(1,1));   
     assertEquals(1,b.getValor(1,1));  
     assertEquals(1,b.getValor(1,1));  
-    assertEquals(1,b.getValor(2,1)); */
+    assertEquals(1,b.getValor(2,1)); 
 
       
 }

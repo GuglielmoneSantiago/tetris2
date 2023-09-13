@@ -8,10 +8,12 @@ public class PieceLRightTest {
     @Test
     public void Crear_PiezaL(){
         PieceLRight p=new PieceLRight();
+        p.setLado(0);
+        p.lados();
         assertEquals( 1, p.getValorMatriz(1,0));
         assertEquals( 1, p.getValorMatriz(1,1));
         assertEquals( 1, p.getValorMatriz(1,2));
-        assertEquals( 1, p.getValorMatriz(1,2));
+        assertEquals( 1, p.getValorMatriz(2,2));
      }
      @Test
      public void insertar_FichaEnPosicion(){
@@ -62,17 +64,16 @@ public class PieceLRightTest {
     public void entrar_piezaDerecha(){
         PieceLRight p= new PieceLRight();
         Board b=new Board();
+        p.setLado(0);
+        p.lados();
         b.piezaActiva=p;
-        b.insertarPieza();
         b.piezaActiva.completarParedDerecha();
-        b.actualizarBoard0();
-        b.piezaActiva.establecerPosicion(0, 0);
-        b.actualizarBoard1();
         b.piezaActiva.establecerPosicion(9,0); 
-       /*/ assertEquals(1,b.getValor(9,2));  
-        assertEquals(1,b.getValor(8,0));  
-        assertEquals(1,b.getValor(8,1));  
-        assertEquals(1,b.getValor(8,2));  */
+        b.actualizarBoard1();
+        assertEquals(1,b.getValor(1,7));  
+        assertEquals(1,b.getValor(1,8));  
+        assertEquals(1,b.getValor(1,9));  
+        assertEquals(1,b.getValor(2,9));
 
     }
 
@@ -80,17 +81,16 @@ public class PieceLRightTest {
     public void entrar_piezaIzquierda(){
         PieceLRight p= new PieceLRight();
         Board b=new Board();
+        p.setLado(0);
+        p.lados();
         b.piezaActiva=p;
-        b.insertarPieza();
-        b.piezaActiva.setLado(1);
-        b.piezaActiva.completarParedIzquierda();
-        b.actualizarBoard0();
-        b.piezaActiva.establecerPosicion(0, 0);
+        b.piezaActiva.completarParedDerecha();
+        b.piezaActiva.establecerPosicion(0,0); 
         b.actualizarBoard1();
-        /*assertEquals(1,b.getValor(1,0));
-        assertEquals(1,b.getValor(1,1));
-        assertEquals(1,b.getValor(1,2));
-        assertEquals(1,b.getValor(2,2)); */
+        assertEquals(1,b.getValor(1,0));  
+        assertEquals(1,b.getValor(1,1));  
+        assertEquals(1,b.getValor(1,2));  
+        assertEquals(1,b.getValor(2,2));
 
 
     }
