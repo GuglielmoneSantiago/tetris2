@@ -1,28 +1,18 @@
 package com.ucp.Objetos.piezas;
 
+import com.ucp.Objetos.Tetris.Tetris;
+
 public class main { public static void main(String[] args) {
-    Board board=new Board();
+    Tetris t=new Tetris();
+        Board board=new Board();
+        PieceSquare p= new PieceSquare();
+        board.piezaActiva=p;
+        t.boardT=board;
+        t.tick();
     
-    for(int i=0;i<4;i++){
-        for(int x=0;x<5;x++){
-            PieceSquare s=new PieceSquare();
-            board.piezaActiva=s;
-            board.piezaActiva.establecerPosicion(x*2, 0);
-            board.posicion1();
-                for(int y=0;y<20;y++){
-                    board.bajarFicha();
-                }
-        }
-        PieceSquare s=new PieceSquare();
-        board.piezaActiva=s;
-        board.piezaActiva.completarParedDerecha();
-        board.piezaActiva.establecerPosicion(9, 0);
-        board.posicion1();
-        for(int y=0;y<20;y++){
-            board.bajarFicha();
-        }
-    }
-    board.borrarFilaLlena();
+    
+    
+    
     
     // Inicializa y muestra la primera pieza
     System.out.print(board.getEstado());

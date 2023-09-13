@@ -188,24 +188,28 @@ public class Board {
             }
         }
     }
+    public void bajarFichaJuego(){
+        bajarFicha();
+        if(((piezaActiva.posicionY)+piezaActiva.altura)>=19){
+            generarFichaAleatoria();
+            insertarPieza();
+        }
+    }
     public void bajarFicha(){
         //Limpiar Donde esta el objeto
-        for(int y=0;y<20;y++){
-            for(int x=0;x<10;x++){
-                if(piezaActiva.posicion[y][x]==1){
-                    matriz[y][x]=0;
-                }
-            }
-        }
+        posicion0();
         //Bajar la ficha
-        if(((piezaActiva.posicionY)+piezaActiva.altura)!=19){
+        //casos no llego abajo
+        if(((piezaActiva.posicionY)+piezaActiva.altura)<19){
             piezaActiva.posicionY++;
             piezaActiva.resetPosicion();
             piezaActiva.establecerPosicion((piezaActiva.posicionX),(piezaActiva.posicionY));
+            //caso tiene ficha abajo
             if(puedeBajar()==false){
                 piezaActiva.posicionY--;
                 piezaActiva.resetPosicion();
                 piezaActiva.establecerPosicion((piezaActiva.posicionX),(piezaActiva.posicionY));
+                piezaActiva.posicionY=19;
                 for(int y=0;y<20;y++){
                     for(int x=0;x<10;x++){
                         if(piezaActiva.posicion[y][x]==1){
@@ -213,6 +217,8 @@ public class Board {
                         }
                     }
                 }
+                
+                //caso no tiene ficha abajo
             }else{
                 for(int y=0;y<20;y++){
                     for(int x=0;x<10;x++){
@@ -230,11 +236,10 @@ public class Board {
                 }
                 }
             }
-            
         }
     }
     public void generarFichaAleatoria(){ 
-        int numero = (int)(Math.random()*5+1);
+        int numero = (int)(Math.random()*6+1);
         switch(numero){
             case 1:
                 PieceDogLeft piezaDog=new PieceDogLeft();

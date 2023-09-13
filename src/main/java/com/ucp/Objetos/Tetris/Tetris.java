@@ -9,6 +9,7 @@ public class Tetris {
     public void start(){     
         boardT.generarFichaAleatoria();
         boardT.insertarPieza();
+        boardT.mirarEstado();
     }
     public void rotateLeft(){
         if(boardT.piezaActiva!=null){
