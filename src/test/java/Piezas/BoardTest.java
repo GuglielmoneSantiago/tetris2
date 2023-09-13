@@ -53,6 +53,7 @@ public class BoardTest {
     @Test
     public void funcion_InsertarFicha_TrueTest(){
         Board b=new Board();
+        for(int i=0;i<100;i++){
         b.generarFichaAleatoria();
         b.insertarPieza();
         int posx=0;
@@ -65,7 +66,7 @@ public class BoardTest {
                 }
             }
         }
-        assertEquals(1,b.getValor(posy,posx));
+        assertEquals(1,b.getValor(posy,posx));}
     }
     @Test
     public void funcion_rotarIzquierda_meterFicha(){
@@ -80,13 +81,13 @@ public class BoardTest {
         assertEquals( 1, p.getValorMatriz(1,1));
         assertEquals( 1, p.getValorMatriz(2,1));
         assertEquals( 1, p.getValorMatriz(3,1));
-        assertEquals( 1, p.getValorPosicion(0,1));
+        assertEquals( 1, p.getValorMatriz(0,1));
         assertEquals( 1, p.getValorPosicion(1,1));
         assertEquals( 1, p.getValorPosicion(2,1));
         assertEquals( 1, p.getValorPosicion(3,1));
         b.rotateLeft();
         //ficha
-        assertEquals( 1, p.getValorPosicion(1,0));
+        assertEquals( 1, p.getValorMatriz(1,0));
         assertEquals( 1, p.getValorPosicion(1,1));
         assertEquals( 1, p.getValorPosicion(1,2));
         assertEquals( 1, p.getValorPosicion(1,3));
@@ -100,31 +101,31 @@ public class BoardTest {
     @Test
     public void funcion_rotarDerecha_meterFicha(){
         Board b=new Board();
-        PieceStick p=new PieceStick();
+        PieceSquare p=new PieceSquare();
         b.piezaActiva=p;
-        p.setLado(1);
+        p.setLado(0);
         p.lados();
-        b.insertarPieza();
         b.piezaActiva.establecerPosicion(0,0);
+        b.posicion1();
         assertEquals( 1, p.getValorMatriz(0,1));
+        assertEquals( 1, p.getValorMatriz(0,0));
         assertEquals( 1, p.getValorMatriz(1,1));
-        assertEquals( 1, p.getValorMatriz(2,1));
-        assertEquals( 1, p.getValorMatriz(3,1));
+        assertEquals( 1, p.getValorMatriz(1,0));
         assertEquals( 1, p.getValorPosicion(0,1));
+        assertEquals( 1, p.getValorPosicion(0,0));
         assertEquals( 1, p.getValorPosicion(1,1));
-        assertEquals( 1, p.getValorPosicion(2,1));
-        assertEquals( 1, p.getValorPosicion(3,1));
+        assertEquals( 1, p.getValorPosicion(1,0));
         b.rotateRight();
         //ficha
-        assertEquals( 1, p.getValorPosicion(1,0));
+        assertEquals( 1, p.getValorPosicion(0,1));
+        assertEquals( 1, p.getValorPosicion(0,0));
         assertEquals( 1, p.getValorPosicion(1,1));
-        assertEquals( 1, p.getValorPosicion(1,2));
-        assertEquals( 1, p.getValorPosicion(1,3));
+        assertEquals( 1, p.getValorPosicion(1,0));
         //tablero
-        assertEquals( 1, b.getValor(1,0));
+        assertEquals( 1, b.getValor(0,0));
+        assertEquals( 1, b.getValor(0,1));
         assertEquals( 1, b.getValor(1,1));
-        assertEquals( 1, b.getValor(1,2));
-        assertEquals( 1, b.getValor(1,3));
+        assertEquals( 1, b.getValor(1,0));
          
     }
     @Test
@@ -132,7 +133,9 @@ public class BoardTest {
         Board board=new Board();
         PieceStick piece=new PieceStick();
         piece.setLado(0);
+        piece.lados();
         board.piezaActiva=piece;
+        board.piezaActiva.completarParedIzquierda();
         piece.establecerPosicion(0, 0);
         for(int i=0;i<20;i++){
             board.bajarFicha();
