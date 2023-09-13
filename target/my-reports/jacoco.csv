@@ -1,0 +1,12 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Tetris,com.ucp.Objetos.Tetris,Tetris,20,32,4,0,7,10,5,3,3,3
+Tetris,com.ucp.Objetos.Tetris,Clock,0,19,0,0,0,6,0,3,0,3
+Tetris,com.ucp.Objetos.piezas,PieceSquare,0,36,1,1,0,15,1,4,0,4
+Tetris,com.ucp.Objetos.piezas,Board,314,1250,59,193,64,229,38,119,0,24
+Tetris,com.ucp.Objetos.piezas,PieceDogLeft,3,96,5,6,1,29,5,5,0,4
+Tetris,com.ucp.Objetos.piezas,PieceBase,82,384,17,62,16,83,12,42,1,12
+Tetris,com.ucp.Objetos.piezas,PieceT,3,124,3,6,1,39,3,7,0,4
+Tetris,com.ucp.Objetos.piezas,PieceLLeft,3,124,3,6,1,39,3,7,0,4
+Tetris,com.ucp.Objetos.piezas,PieceDogRight,3,84,3,4,1,27,3,5,0,4
+Tetris,com.ucp.Objetos.piezas,PieceStick,0,87,1,6,0,28,1,7,0,4
+Tetris,com.ucp.Objetos.piezas,PieceLRight,3,124,3,6,1,39,3,7,0,4

@@ -7,6 +7,13 @@ import org.junit.Test;
 import com.ucp.Objetos.piezas.*;
 public class BoardTest {
     @Test
+    public void setName_getName_board_Test(){
+        Board b=new Board();
+        b.setName("tablero");
+        assertEquals("tablero",b.getName());
+    }
+    
+    @Test
     public void creacion_board_Test(){
         Board b=new Board();
         for(int y=0;y<20;y++){

@@ -1,0 +1,12 @@
+com\ucp\Objetos\piezas\PieceDogRight.class
+com\ucp\Objetos\piezas\PieceSquare.class
+com\ucp\Objetos\piezas\PieceDogLeft.class
+com\ucp\Objetos\piezas\PieceLLeft.class
+com\ucp\Objetos\piezas\Board.class
+com\ucp\Objetos\piezas\iRotator.class
+com\ucp\Objetos\piezas\PieceBase.class
+com\ucp\Objetos\Tetris\Tetris.class
+com\ucp\Objetos\piezas\PieceStick.class
+com\ucp\Objetos\Tetris\Clock.class
+com\ucp\Objetos\piezas\PieceLRight.class
+com\ucp\Objetos\piezas\PieceT.class

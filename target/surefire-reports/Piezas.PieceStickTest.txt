@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: Piezas.PieceStickTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in Piezas.PieceStickTest
+entrar_piezaIzquierda(Piezas.PieceStickTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at Piezas.PieceStickTest.entrar_piezaIzquierda(PieceStickTest.java:109)
+
+entrar_piezaDerecha(Piezas.PieceStickTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at Piezas.PieceStickTest.entrar_piezaDerecha(PieceStickTest.java:94)
+

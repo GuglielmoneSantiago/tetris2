@@ -11,8 +11,13 @@ public class Board {
     public Board(){
         cargarMatriz_0();
     }
-    public String setName(){
+    public String getName(){
         return name;
+    }
+    public void setlineCount(){
+        contador++;
+    }public int getlineCount(){
+        return contador;
     }
     public void setName(String x){
         name=x;
@@ -65,22 +70,7 @@ public class Board {
             }
         }
     }
-    public void printBoard() {
-        for (int i = 0; i < 20; i++) {
-            for (int j = 0; j < 10; j++) {
-                // Verificar si hay una pieza en la posición (i, j)
-                if (matriz[i][j] != 0) {
-                    // Si hay una pieza, imprimir un carácter que represente la pieza
-                    System.out.print("1"); // Puedes usar otro carácter según tus preferencias
-                } else {
-                    // Si no hay una pieza, imprimir un espacio en blanco
-                    System.out.print("0");
-                }
-            }
-            // Salto de línea al final de cada fila del tablero
-            System.out.println();
-        }
-    }
+    
     public void actualizarBoard0(){
         for(int y=0;y<20;y++){
             for(int x=0;x<10;x++){
@@ -94,7 +84,7 @@ public class Board {
         for(int y=0;y<20;y++){
             for(int x=0;x<10;x++){
                 if(piezaActiva.posicion[y][x]==1){
-                    matriz[y][x]=1;
+                    setValor1(y,x);
                 }
             }
         }
@@ -134,8 +124,8 @@ public class Board {
                 // Establece la fila superior como una fila vacía
                 Arrays.fill(matriz[0], 0);
                 fila++; // Revisa la fila actual nuevamente, ya que ahora contiene las filas de arriba
-                contador++;
-                if(contador==5){
+                setlineCount();
+                if(getlineCount()==5){
                     setEstado(3);
                 }
             }
@@ -153,7 +143,15 @@ public class Board {
         return opcion;
     }
     public void rotateRight(){
+        for(int y=0;y<20;y++){
+            for(int x=0;x<10;x++){
+                if(piezaActiva.posicion[y][x]==1){
+                    matriz[y][x]=0;
+                }
+            }
+        }
         piezaActiva.rotateRight();
+        piezaActiva.lados();
         piezaActiva.resetPosicion();
         piezaActiva.establecerPosicion((piezaActiva.posicionX),(piezaActiva.posicionY));
         if(puedeGirar()==false){
@@ -179,6 +177,7 @@ public class Board {
             }
         }
         piezaActiva.rotateLeft();
+        piezaActiva.lados();
         piezaActiva.resetPosicion();
         piezaActiva.establecerPosicion((piezaActiva.posicionX),(piezaActiva.posicionY));
         
@@ -296,7 +295,7 @@ public class Board {
                 for(int y=0;y<20;y++){
                     for(int x=0;x<10;x++){
                         if(piezaActiva.posicion[y][x]==1){
-                            matriz[y][x]=1;
+                            setValor1(y,x);
                         }
                     }
                 }

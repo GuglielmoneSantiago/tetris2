@@ -17,22 +17,6 @@ public abstract class PieceBase implements iRotator{
         lado=x;
     }
     
-    public void printBoard() {
-        for (int i = 0; i < 20; i++) {
-            for (int j = 0; j < 10; j++) {
-                // Verificar si hay una pieza en la posición (i, j)
-                if (posicion[i][j] != 5) {
-                    // Si hay una pieza, imprimir un carácter que represente la pieza
-                    System.out.print("1"); // Puedes usar otro carácter según tus preferencias
-                } else {
-                    // Si no hay una pieza, imprimir un espacio en blanco
-                    System.out.print("0");
-                }
-            }
-            // Salto de línea al final de cada fila del tablero
-            System.out.println();
-        }
-    }
     public int getValorPosicion(int posy,int posx){
         return posicion[posy][posx];
     }

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PieceT.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tetris</a> &gt; <a href="index.source.html" class="el_package">com.ucp.Objetos.piezas</a> &gt; <span class="el_source">PieceT.java</span></div><h1>PieceT.java</h1><pre class="source lang-java linenums">package com.ucp.Objetos.piezas;
+public class PieceT extends PieceBase {
+<span class="fc" id="L3">    public PieceT(){</span>
+<span class="fc" id="L4">        lado= (int)(Math.random()*3);</span>
+<span class="fc" id="L5">        lados();</span>
+<span class="fc" id="L6">        }</span>
+    @Override
+    public void rotateLeft(){
+<span class="fc" id="L9">        lado= lado-1;</span>
+<span class="pc bpc" id="L10" title="1 of 2 branches missed.">        if (lado&lt;0){</span>
+<span class="fc" id="L11">            lado=3;</span>
+        }
+<span class="fc" id="L13">        lados();</span>
+<span class="fc" id="L14">    }</span>
+    @Override
+    public void rotateRight(){
+<span class="fc" id="L17">        lado= lado+1;</span>
+<span class="pc bpc" id="L18" title="1 of 2 branches missed.">        if (lado&gt;3){</span>
+<span class="nc" id="L19">            lado=0;</span>
+        }
+<span class="fc" id="L21">        lados();</span>
+<span class="fc" id="L22">    }</span>
+    @Override
+    public void lados(){
+<span class="fc" id="L25">        reset();</span>
+<span class="pc bpc" id="L26" title="1 of 5 branches missed.">        switch(lado){</span>
+            case 0:
+<span class="fc" id="L28">                setValor1Matriz(0, 1);</span>
+<span class="fc" id="L29">                setValor1Matriz(1, 1);</span>
+<span class="fc" id="L30">                setValor1Matriz(1, 2);</span>
+<span class="fc" id="L31">                setValor1Matriz(1, 0);</span>
+<span class="fc" id="L32">                altura=1;</span>
+<span class="fc" id="L33">                break;</span>
+            case 1:
+<span class="fc" id="L35">                setValor1Matriz(1, 0);</span>
+<span class="fc" id="L36">                setValor1Matriz(1, 1);</span>
+<span class="fc" id="L37">                setValor1Matriz(2, 1);</span>
+<span class="fc" id="L38">                setValor1Matriz(1, 2);</span>
+<span class="fc" id="L39">                altura=2;</span>
+<span class="fc" id="L40">                break;</span>
+            case 2:
+<span class="fc" id="L42">                setValor1Matriz(0, 1);</span>
+<span class="fc" id="L43">                setValor1Matriz(1, 1);</span>
+<span class="fc" id="L44">                setValor1Matriz(2, 1);</span>
+<span class="fc" id="L45">                setValor1Matriz(1, 2);</span>
+<span class="fc" id="L46">                altura=2;</span>
+<span class="fc" id="L47">                break;  </span>
+            case 3:
+<span class="fc" id="L49">                setValor1Matriz(1, 0);</span>
+<span class="fc" id="L50">                setValor1Matriz(1, 1);</span>
+<span class="fc" id="L51">                setValor1Matriz(1, 2);</span>
+<span class="fc" id="L52">                setValor1Matriz(2, 1);</span>
+<span class="fc" id="L53">                altura=2;</span>
+                break; 
+        }
+<span class="fc" id="L56">    }</span>
+    
+
+
+ }
+        
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

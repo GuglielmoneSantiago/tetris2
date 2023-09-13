@@ -27,6 +27,27 @@ public class PieceSquareTest {
        assertEquals( 1, p.getValorMatriz(1,0)); 
     }
     @Test
+     public void funcion_rotarIzquierda(){   //funcion rotar izquierda case 3
+         PieceSquare p=new PieceSquare();
+         p.rotateLeft();
+         assertEquals( 1, p.getValorMatriz(0,0));
+         assertEquals( 1, p.getValorMatriz(0,1));
+         assertEquals( 1, p.getValorMatriz(1,1));
+         assertEquals( 1, p.getValorMatriz(1,0));   
+    
+    }
+    @Test
+     public void funcion_rotarDerecha(){   //funcion rotar izquierda case 3
+         PieceSquare p=new PieceSquare();
+         p.setLado(0);
+         p.rotateRight();
+         assertEquals( 1, p.getValorMatriz(0,0));
+         assertEquals( 1, p.getValorMatriz(0,1));
+         assertEquals( 1, p.getValorMatriz(1,1));
+         assertEquals( 1, p.getValorMatriz(1,0));    
+    
+    }
+    @Test
      public void funcion_completarParedDerecha(){
          PieceSquare p=new PieceSquare();
          p.setLado(0);
