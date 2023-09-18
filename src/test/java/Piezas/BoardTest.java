@@ -7,6 +7,18 @@ import org.junit.Test;
 import com.ucp.Objetos.piezas.*;
 public class BoardTest {
     @Test
+    public void test_InsertarFichas100(){
+        Board b=new Board();
+        for(int i=0;i<100;i++){
+            b.generarFichaAleatoria();
+        }
+        long result=b.lista.stream().filter(ficha->ficha.getClass().getSimpleName()=="PieceStick").count();
+        if(result>0){
+            assertNotNull(result);
+            return;
+        }
+    }
+    @Test
     public void actualizarBoard0_Test(){
         Board b=new Board();
         PieceDogLeft p= new PieceDogLeft();

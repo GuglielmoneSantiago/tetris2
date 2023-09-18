@@ -1,11 +1,13 @@
 package com.ucp.Objetos.piezas;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Board {
     public int matriz[][]=new int [20][10];
     private String name ="";
     public PieceBase piezaActiva;
+    public ArrayList<PieceBase> lista= new ArrayList<>();
     protected int estado=0;
     public int contador=0;
     public Board(){
@@ -250,26 +252,32 @@ public class Board {
             case 1:
                 PieceDogLeft piezaDog=new PieceDogLeft();
                 piezaActiva=piezaDog;
+                lista.add(piezaActiva);
                 break;
             case 2:
                 PieceLRight piezaL=new PieceLRight();
                 piezaActiva=piezaL;
+                lista.add(piezaActiva);
                 break;
             case 3:
                 PieceSquare piezaSquare=new PieceSquare();
                 piezaActiva=piezaSquare;
+                lista.add(piezaActiva);
                 break;
             case 4:
                 PieceStick piezaStick=new PieceStick();
                 piezaActiva=piezaStick;
+                lista.add(piezaActiva);
                 break;
             case 5:
                 PieceT piezaT=new PieceT();
                 piezaActiva=piezaT;
+                lista.add(piezaActiva);
                 break;
             case 6:
                 PieceDogRight piezaDog2=new PieceDogRight();
                 piezaActiva=piezaDog2;
+                lista.add(piezaActiva);
                 break;
 
         }
